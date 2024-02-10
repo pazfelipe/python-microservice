@@ -23,6 +23,7 @@ class CustomerService:
 
         created_customer = customer
         created_customer["id"] = len(self.customers)
+        created_customer["created_at"] = datetime.now()
 
         return created_customer
 
