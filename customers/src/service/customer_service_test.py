@@ -31,6 +31,7 @@ class CustomerServiceTest(unittest.TestCase):
         response = self.customer.create_customer(self.mock_customer)
         self.assertTrue("id" in response)
         self.assertEqual(response["id"], 1)
+        self.assertTrue("created_at" in response)
 
     def test_update_customer(self):
         pass
