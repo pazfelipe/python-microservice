@@ -1,5 +1,6 @@
 import unittest
 from .customer_service import CustomerService
+from dataclasses import is_dataclass
 
 
 class CustomerServiceTest(unittest.TestCase):
@@ -8,6 +9,9 @@ class CustomerServiceTest(unittest.TestCase):
         self.customer = CustomerService()
         self.mock_customer = {"name": "John Doe", "email": "test@gmail.com"}
         return super().setUp()
+
+    def test_if_class_is_a_dataclass(self):
+        self.assertTrue(is_dataclass(self.customer))
 
     def test_get_customer(self):
         pass
