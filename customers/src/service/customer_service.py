@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import datetime
 
 
 @dataclass
@@ -12,6 +13,7 @@ class CustomerService:
 
     customers = []
 
+    @classmethod
     def create_customer(self, customer: Customer) -> None:
         if not "name" in customer:
             raise ValueError("Name is required")
